@@ -13,47 +13,47 @@ namespace CombinedAPI.Services
       _cartRepository = cartRepository;
     }
 
-    public Cart getUserCart(int cartId)
+    public Cart getUserCart(int userId)
     {
-      var cart = _cartRepository.getUserCart(cartId);
+      var cart = _cartRepository.getUserCart(userId);
       if (cart == null)
       {
-        throw new ArgumentException($"No cart found with user ID {cartId}");
+        throw new ArgumentException($"No cart found with User ID {userId}");
       }
       return cart;
     }
 
-    public bool addToCart(int cartId, Product product, int amount)
+    public bool addToCart(int userId, int product, int amount)
     {
-      var cart = _cartRepository.getUserCart(cartId);
+      var cart = _cartRepository.getUserCart(userId);
       if (cart == null)
       {
-        throw new ArgumentException($"No cart found with ID {cartId}");
+        throw new ArgumentException($"No cart found with User ID {userId}");
       }
 
-      return _cartRepository.addToCart(cartId, product, amount);
+      return _cartRepository.addToCart(userId, product, amount);
     }
 
-    public bool removeFromCart(int cartId, Product product)
+    public bool removeFromCart(int userId, int product)
     {
-      var cart = _cartRepository.getUserCart(cartId);
+      var cart = _cartRepository.getUserCart(userId);
       if (cart == null)
       {
-        throw new ArgumentException($"No cart found with ID {cartId}");
+        throw new ArgumentException($"No cart found with User ID {userId}");
       }
 
-      return _cartRepository.removeFromCart(cartId, product);
+      return _cartRepository.removeFromCart(userId, product);
     }
 
-    public bool updateAmount(int cartId, Product product, int amount)
+    public bool updateAmount(int userId, int productId, int amount)
     {
-      var cart = _cartRepository.getUserCart(cartId);
+      var cart = _cartRepository.getUserCart(userId);
       if (cart == null)
       {
-        throw new ArgumentException($"No cart found with ID {cartId}");
+        throw new ArgumentException($"No cart found with User ID {userId}");
       }
 
-      return _cartRepository.updateAmount(cartId, product, amount);
+      return _cartRepository.updateAmount(userId, productId, amount);
     }
 
     public bool initiateCart(Cart cart)
@@ -61,15 +61,15 @@ namespace CombinedAPI.Services
       return _cartRepository.initiateCart(cart);
     }
 
-    public bool clearCart(int cartId)
+    public bool clearCart(int userId)
     {
-      var cart = _cartRepository.getUserCart(cartId);
+      var cart = _cartRepository.getUserCart(userId);
       if (cart == null)
       {
-        throw new ArgumentException($"No cart found with ID {cartId}");
+        throw new ArgumentException($"No cart found with User ID {userId}");
       }
 
-      return _cartRepository.clearCart(cartId);
+      return _cartRepository.clearCart(userId);
     }
   }
 }

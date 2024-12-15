@@ -4,11 +4,11 @@ namespace CombinedAPI.Interfaces
 {
   public interface ICartAccessor
   {
-    public Cart getUserCart(int cartId);
-    bool addToCart(int cartId, Product product, int amount);
-    bool removeFromCart(int cartId, Product product);
-    bool updateAmount(int cartId, Product product, int amount);
-    bool initiateCart(Cart cart);
-    bool clearCart(int cartId);
-  }
+        Cart getUserCart(int userId);
+        bool addToCart(int userId, int product, int amount);
+        bool removeFromCart(int userId, int product);
+        bool updateAmount(int userId, int product, int amount);
+        bool initiateCart(Cart cart);
+        bool clearCart(int userId);
+    }
 }
