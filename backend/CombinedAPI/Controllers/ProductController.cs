@@ -51,7 +51,7 @@ namespace CombinedAPI.Controllers
     {
       Console.WriteLine($"Getting product by Category: {id}");
       var products = _productManager.GetProductByCategory(id);
-      if (products == null)
+      if (products == null || !products.Any())
       {
         return NotFound("Product in this category not found.");
       }
@@ -63,7 +63,7 @@ namespace CombinedAPI.Controllers
     public IActionResult GetAllProducts()
     {
       var products = _productManager.GetAllProducts();
-      if (products == null)
+      if (products == null || !products.Any())
       {
         return NotFound("No Products found.");
       }
