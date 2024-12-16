@@ -16,18 +16,11 @@ export interface User {
   shippingLocation: string;
 }
 
-export const getUserInfo = async (username: string): Promise<User> => {
-  const response = await fetch(`http://localhost:5058/api/user/user/${username}`);
-  const userInfo: User = await response.json();
-
-  return userInfo;
-};
-
-var storedUser = localStorage.getItem("userName");
-
 const ProfilePage = async () => {
-  if (storedUser !== null) {
-    const userInfo = await getUserInfo(storedUser);
+
+  const response = await fetch(`http://localhost:5058/api/user/id/39`);
+  const userInfo = await response.json();   
+
     return (
       <div className="bg-zinc-950 text-zinc-100 p-5 w-[30rem] h-full flex flex-col rounded-xl">
         <div className="flex flex-col items-center w-full">
@@ -61,18 +54,9 @@ const ProfilePage = async () => {
             <span className="font-bold">Phone Number:</span>
             <span className="ml-2">{userInfo.phoneNumber}</span>
           </div>
-          <div className="">
-            <span className="font-bold">Address:</span>
-            <span className="ml-2">{userInfo.address}</span>
-          </div>
         </div>
       </div>
     );
-  }
-  else {
-    console.log("User not found. Please login");
-  }
-
 };
 
 export default ProfilePage;

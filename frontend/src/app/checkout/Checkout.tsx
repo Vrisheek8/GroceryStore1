@@ -1,11 +1,10 @@
 import { FlipWords } from "@/components/ui/FlipWords";
 import Link from "next/link";
 import React, { useState } from "react";
-import { getUserInfo } from "../profile/ProfilePage";
 
 const CheckoutPage = async () => {
-  var id = 1;
-  const userInfo = await getUserInfo(1);
+  const response = await fetch(`http://localhost:5058/api/user/id/39`);
+  const userInfo = await response.json();   
 
   return (
     <form className="bg-zinc-950 text-zinc-100  p-5 w-[30rem] h-full flex flex-col rounded-xl">
