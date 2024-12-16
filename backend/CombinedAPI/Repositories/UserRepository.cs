@@ -73,6 +73,37 @@ namespace CombinedAPI.Repositories
       return null;
     }
 
+    public User GetIdByUser(string user)
+    {
+      using (var connection = new SqlConnection(_connectionString))
+      {
+        connection.Open();
+        var query = "SELECT * FROM Users WHERE Username = @Username";
+        using (SqlCommand cmd = new SqlCommand(query, connection))
+        {
+          cmd.Parameters.AddWithValue("@Username", user);
+          using (SqlDataReader reader = cmd.ExecuteReader())
+          {
+            if (reader.Read())
+            {
+              return new User
+              {
+                userID = GetSafeInt32(reader, "UserID"),
+                username = GetSafeString(reader, "Username"),
+                firstName = GetSafeString(reader, "FirstName"),
+                lastName = GetSafeString(reader, "LastName"),
+                email = GetSafeString(reader, "Email"),
+                phoneNumber = GetSafeString(reader, "PhoneNumber"),
+                password = GetSafeString(reader, "Password"),
+              };
+            }
+          }
+        }
+      }
+      return null;
+    }
+
+
     public bool CreateUser(User user)
     {
       using (var connection = new SqlConnection(_connectionString))

@@ -6,6 +6,7 @@ namespace CombinedAPI.Interfaces
   {
       List<User> GetAllUsers();
       public User GetUserById(int userId);
+      public User GetIdByUser(string user); 
       bool UpdateUser(int id, User user);
       bool DeleteUser(int id);
       bool CreateUser(User user);

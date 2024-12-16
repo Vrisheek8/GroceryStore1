@@ -32,6 +32,7 @@ const LoginForm = () => {
 
       const token = await response.data;
       localStorage.setItem("authToken", token);
+      localStorage.setItem("userName", username);
 
       router.push("/");
     } catch (error) {

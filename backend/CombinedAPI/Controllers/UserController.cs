@@ -67,6 +67,27 @@ namespace CombinedAPI.Controllers
       }
     }
 
+        // GET: api/user/user/{user}
+    [HttpGet("user/{user}")]
+    public IActionResult GetIdByUser(string user)
+    {
+      try
+      {
+        Console.WriteLine($"Getting ID by username: " + user);
+        var id = _userAccessor.GetIdByUser(user);
+        if (id == null)
+        {
+          return NotFound("ID not found.");
+        }
+        return Ok(id);
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error occurred: {ex.Message}");
+        return StatusCode(500, "An error occurred while processing your request.");
+      }
+    }
+
     // POST: api/user/create
     [HttpPost("create")]
     public IActionResult CreateUser([FromBody] User user)
