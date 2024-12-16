@@ -22,6 +22,11 @@ namespace CombinedAPI.Repositories
       return _userRepository.GetUserById(userId);
     }
 
+    public User GetIdByUser(string user) 
+    {
+      return _userRepository.GetIdByUser(user);
+    }
+
     public bool CreateUser(User user)
     {
       return _userRepository.CreateUser(user);
