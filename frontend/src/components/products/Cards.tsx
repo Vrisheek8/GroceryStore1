@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { IoIosAdd } from "react-icons/io";
+import { useState } from "react";
+import CartButton from "./CartButton";
 
 interface ProductType {
   productID: number;
@@ -19,7 +21,6 @@ interface ProductType {
 }
 
 const Cards = async (categoryId: { categoryId: number }) => {
-  console.log(categoryId)
   const response = await fetch(
     `http://localhost:5058/api/product/category/${categoryId.categoryId}`
   );
@@ -41,9 +42,7 @@ const Cards = async (categoryId: { categoryId: number }) => {
           />
           <div className="flex flex-row items-center justify-between mt-3">
             <h2 className="font-bold">{product.name}</h2>
-            <button className="rounded-full p-1 bg-pink-500 hover:bg-pink-600">
-              <IoIosAdd className="text-white text-3xl" />
-            </button>
+          <CartButton itemName={product.name} itemPrice={product.price} />
           </div>
           <div className="flex flex-col gap-2 mt-6">
             <p>${product.price}</p>
