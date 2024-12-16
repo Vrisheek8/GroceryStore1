@@ -1982,38 +1982,31 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.4",
       "Microsoft.AspNetCore.OpenApi >= 8.0.8",
       "Microsoft.Data.SqlClient >= 5.2.2",
+      "Microsoft.IdentityModel.Tokens >= 8.3.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "System.Data.SqlClient >= 4.9.0",
       "System.IdentityModel.Tokens.Jwt >= 8.3.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\amany\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/morenzo/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\CombinedAPI.csproj",
+      "projectUniqueName": "/Users/morenzo/GroceryStore/backend/CombinedAPI/CombinedAPI.csproj",
       "projectName": "CombinedAPI",
-      "projectPath": "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\CombinedAPI.csproj",
-      "packagesPath": "C:\\Users\\amany\\.nuget\\packages\\",
-      "outputPath": "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\obj\\",
+      "projectPath": "/Users/morenzo/GroceryStore/backend/CombinedAPI/CombinedAPI.csproj",
+      "packagesPath": "/Users/morenzo/.nuget/packages/",
+      "outputPath": "/Users/morenzo/GroceryStore/backend/CombinedAPI/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\amany\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/morenzo/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2053,6 +2046,10 @@
             "target": "Package",
             "version": "[5.2.2, )"
           },
+          "Microsoft.IdentityModel.Tokens": {
+            "target": "Package",
+            "version": "[8.3.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.4.0, )"
@@ -2085,7 +2082,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
