@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/josechacon/School/SoftEng/GroceryStore/backend/CombinedAPI/CombinedAPI.csproj": {}
+    "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\CombinedAPI.csproj": {}
   },
   "projects": {
-    "/Users/josechacon/School/SoftEng/GroceryStore/backend/CombinedAPI/CombinedAPI.csproj": {
+    "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\CombinedAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/josechacon/School/SoftEng/GroceryStore/backend/CombinedAPI/CombinedAPI.csproj",
+        "projectUniqueName": "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\CombinedAPI.csproj",
         "projectName": "CombinedAPI",
-        "projectPath": "/Users/josechacon/School/SoftEng/GroceryStore/backend/CombinedAPI/CombinedAPI.csproj",
-        "packagesPath": "/Users/josechacon/.nuget/packages/",
-        "outputPath": "/Users/josechacon/School/SoftEng/GroceryStore/backend/CombinedAPI/obj/",
+        "projectPath": "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\CombinedAPI.csproj",
+        "packagesPath": "C:\\Users\\amany\\.nuget\\packages\\",
+        "outputPath": "H:\\Haider's Personal Folder\\OneDrive\\Desktop\\GroceryStore\\backend\\CombinedAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/josechacon/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\amany\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,6 +54,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -62,6 +73,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.9.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [
@@ -83,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
