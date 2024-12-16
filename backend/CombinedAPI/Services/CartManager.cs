@@ -13,24 +13,24 @@ namespace CombinedAPI.Services
       _cartEngine = cartEngine;
     }
 
-    public Cart getUserCart(int userId)
+    public Cart getUserCart(int cartId)
     {
-      return _cartEngine.getUserCart(userId);
+      return _cartEngine.getUserCart(cartId);
     }
 
-    public bool addToCart(int userId, int productId, int amount)
+    public bool addToCart(int cartId, Product product, int amount)
     {
-      return _cartEngine.addToCart(userId, productId, amount);
+      return _cartEngine.addToCart(cartId, product, amount);
     }
 
-    public bool removeFromCart(int userId, int productId)
+    public bool removeFromCart(int cartId, Product product)
     {
-      return _cartEngine.removeFromCart(userId, productId);
+      return _cartEngine.removeFromCart(cartId, product);
     }
 
-    public bool updateAmount(int userId, int productId, int amount)
+    public bool updateAmount(int cartId, Product product, int amount)
     {
-      return _cartEngine.updateAmount(userId, productId, amount);
+      return _cartEngine.updateAmount(cartId, product, amount);
     }
 
     public bool initiateCart(Cart cart)
@@ -38,9 +38,9 @@ namespace CombinedAPI.Services
       return _cartEngine.initiateCart(cart);
     }
 
-    public bool clearCart(int userId)
+    public bool clearCart(int cartId)
     {
-      return _cartEngine.clearCart(userId);
+      return _cartEngine.clearCart(cartId);
     }
   }
 }

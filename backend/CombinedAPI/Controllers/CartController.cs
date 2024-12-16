@@ -20,12 +20,12 @@ namespace CombinedAPI.Controllers
       _cartManager = cartManager;
     }
 
-    // GET: api/cart/get-cart/{userId}
-    [HttpGet("get-cart/{userId}")]
-    public IActionResult getUserCart(int userId)
+    // GET: api/cart/get-cart/{cartId}
+    [HttpGet("get-cart/{cartId}")]
+    public IActionResult getUserCart(int cartId)
     {
-      Console.WriteLine($"Getting Cart by User ID : {userId}");
-      var cart = _cartManager.getUserCart(userId);
+      Console.WriteLine($"Getting Cart by ID : {cartId}");
+      var cart = _cartManager.getUserCart(cartId);
       if (cart == null)
       {
         Console.WriteLine("Unable to locate Cart.");
@@ -34,10 +34,10 @@ namespace CombinedAPI.Controllers
     }
 
     // GET: api/cart/cartId/product/amount
-    [HttpPost("/cart/{userId}/{productId}/{amount}")]
-    public IActionResult addToCart(int cartId, int productId, int amount)
+    [HttpGet("/cart/{cartId}/{product}/{amount}")]
+    public IActionResult addToCart(int cartId, Product product, int amount)
     {
-      bool success = _cartManager.addToCart(cartId, productId, amount);
+      bool success = _cartManager.addToCart(cartId, product, amount);
       if (!success)
       {
         Console.WriteLine("Unable to add to cart");
@@ -47,10 +47,10 @@ namespace CombinedAPI.Controllers
 
     // GET: api/cart/cartId
     // GET: api/product
-    [HttpDelete("cart/{userId}/{productId}")]
-    public IActionResult removeFromCart(int userId, int productId)
+    [HttpGet("cart/{cartId}/{product}")]
+    public IActionResult removeFromCart(int cartId, Product product)
     {
-      bool success = _cartManager.removeFromCart(userId, productId);
+      bool success = _cartManager.removeFromCart(cartId, product);
       if (!success)
       {
         Console.WriteLine("Unable to remove from cart");
@@ -61,10 +61,10 @@ namespace CombinedAPI.Controllers
     // GET: api/cart/cartId
     // GET: api/product
     // GET: api/cart/amount
-    [HttpPut("cart/{userId}/{productId}/{amount}")]
-    public IActionResult updateAmount(int userId, int productId, int amount)
+    [HttpGet("cart/{cartId}/{product}/{amount}")]
+    public IActionResult updateAmount(int cartId, Product product, int amount)
     {
-      bool success = _cartManager.updateAmount(userId, productId, amount);
+      bool success = _cartManager.updateAmount(cartId, product, amount);
       if (!success)
       {
         Console.WriteLine("Unable to update amount in cart");
@@ -73,17 +73,9 @@ namespace CombinedAPI.Controllers
     }
 
     // GET: api/cart/initiate-cart
-    [HttpPost("initiate-cart/{userId}/{productId}/{amount}")]
-    public IActionResult initiateCart(int userId, int productId, int amount, double price)
+    [HttpGet("initiate-cart/{cart}")]
+    public IActionResult initiateCart(Cart cart)
     {
-      SortedDictionary<int, int> itemList = new SortedDictionary<int, int>();
-      itemList.Add(productId, amount);
-      Cart cart = new Cart
-      {
-         userId = userId,
-         totalPrice = 0,
-         itemList = itemList
-      };
       bool success = _cartManager.initiateCart(cart);
       if (!success)
       {
@@ -93,10 +85,10 @@ namespace CombinedAPI.Controllers
     }
 
     // GET: api/cart/clear/cartId
-    [HttpDelete("cart/clear/{userId}")]
-    public IActionResult clearCart(int userId)
+    [HttpGet("cart/clear/{cartId}")]
+    public IActionResult clearCart(int cartId)
     {
-      bool success = _cartManager.clearCart(userId);
+      bool success = _cartManager.clearCart(cartId);
       if (!success)
       {
         Console.WriteLine("Unable to clear cart");
